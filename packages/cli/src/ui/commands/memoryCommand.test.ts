@@ -14,11 +14,11 @@ import {
   getErrorMessage,
   loadServerHierarchicalMemory,
   type FileDiscoveryService,
-} from '@google/gemini-cli-core';
+} from '@lukaloehr/promptly-core';
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@lukaloehr/promptly-core', async (importOriginal) => {
   const original =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@lukaloehr/promptly-core')>();
   return {
     ...original,
     getErrorMessage: vi.fn((error: unknown) => {

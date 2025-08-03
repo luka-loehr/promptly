@@ -41,7 +41,7 @@ describe('quitCommand', () => {
       messages: [
         {
           type: 'user',
-          text: '/quit',
+          text: '/exit',
           id: expect.any(Number),
         },
         {

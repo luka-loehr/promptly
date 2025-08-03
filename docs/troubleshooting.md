@@ -1,3 +1,9 @@
+<!--
+Modified: Changed references from Gemini CLI to Promptly
+Original work Copyright Google LLC
+Licensed under Apache License 2.0
+-->
+
 # Troubleshooting Guide
 
 This guide provides solutions to common issues and debugging tips.
@@ -15,11 +21,11 @@ This guide provides solutions to common issues and debugging tips.
 
 ## Frequently asked questions (FAQs)
 
-- **Q: How do I update Gemini CLI to the latest version?**
-  - A: If installed globally via npm, update Gemini CLI using the command `npm install -g @google/gemini-cli@latest`. If run from source, pull the latest changes from the repository and rebuild using `npm run build`.
+- **Q: How do I update Promptly to the latest version?**
+  - A: If installed globally via npm, update Promptly using the command `npm install -g @google/promptly@latest`. If run from source, pull the latest changes from the repository and rebuild using `npm run build`.
 
-- **Q: Where are Gemini CLI configuration files stored?**
-  - A: The CLI configuration is stored within two `settings.json` files: one in your home directory and one in your project's root directory. In both locations, `settings.json` is found in the `.gemini/` folder. Refer to [CLI Configuration](./cli/configuration.md) for more details.
+- **Q: Where are Promptly configuration files stored?**
+  - A: The CLI configuration is stored within two `settings.json` files: one in your home directory and one in your project's root directory. In both locations, `settings.json` is found in the `.promptly/` folder. Refer to [CLI Configuration](./cli/configuration.md) for more details.
 
 - **Q: Why don't I see cached token counts in my stats output?**
   - A: Cached token information is only displayed when cached tokens are being used. This feature is available for API key users (Gemini API key or Vertex AI) but not for OAuth users (Google Personal/Enterprise accounts) at this time, as the Code Assist API does not support cached content creation. You can still view your total token usage with the `/stats` command.
@@ -31,10 +37,10 @@ This guide provides solutions to common issues and debugging tips.
   - **Solution:**
     Either stop the other process that is using the port or configure the MCP server to use a different port.
 
-- **Error: Command not found (when attempting to run Gemini CLI).**
-  - **Cause:** Gemini CLI is not correctly installed or not in your system's PATH.
+- **Error: Command not found (when attempting to run Promptly).**
+  - **Cause:** Promptly is not correctly installed or not in your system's PATH.
   - **Solution:**
-    1.  Ensure Gemini CLI installation was successful.
+    1.  Ensure Promptly installation was successful.
     2.  If installed globally, check that your npm global binary directory is in your PATH.
     3.  If running from source, ensure you are using the correct command to invoke it (e.g., `node packages/cli/dist/index.js ...`).
 
@@ -51,7 +57,7 @@ This guide provides solutions to common issues and debugging tips.
 - **CLI is not interactive in "CI" environments**
   - **Issue:** The CLI does not enter interactive mode (no prompt appears) if an environment variable starting with `CI_` (e.g., `CI_TOKEN`) is set. This is because the `is-in-ci` package, used by the underlying UI framework, detects these variables and assumes a non-interactive CI environment.
   - **Cause:** The `is-in-ci` package checks for the presence of `CI`, `CONTINUOUS_INTEGRATION`, or any environment variable with a `CI_` prefix. When any of these are found, it signals that the environment is non-interactive, which prevents the CLI from starting in its interactive mode.
-  - **Solution:** If the `CI_` prefixed variable is not needed for the CLI to function, you can temporarily unset it for the command. e.g., `env -u CI_TOKEN gemini`
+  - **Solution:** If the `CI_` prefixed variable is not needed for the CLI to function, you can temporarily unset it for the command. e.g., `env -u CI_TOKEN promptly`
 
 ## Debugging Tips
 

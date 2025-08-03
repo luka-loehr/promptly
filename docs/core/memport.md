@@ -1,17 +1,23 @@
+<!--
+Modified: Changed references from Gemini CLI to Promptly
+Original work Copyright Google LLC
+Licensed under Apache License 2.0
+-->
+
 # Memory Import Processor
 
-The Memory Import Processor is a feature that allows you to modularize your GEMINI.md files by importing content from other files using the `@file.md` syntax.
+The Memory Import Processor is a feature that allows you to modularize your PROMPTLY.md files by importing content from other files using the `@file.md` syntax.
 
 ## Overview
 
-This feature enables you to break down large GEMINI.md files into smaller, more manageable components that can be reused across different contexts. The import processor supports both relative and absolute paths, with built-in safety features to prevent circular imports and ensure file access security.
+This feature enables you to break down large PROMPTLY.md files into smaller, more manageable components that can be reused across different contexts. The import processor supports both relative and absolute paths, with built-in safety features to prevent circular imports and ensure file access security.
 
 ## Syntax
 
 Use the `@` symbol followed by the path to the file you want to import:
 
 ```markdown
-# Main GEMINI.md file
+# Main PROMPTLY.md file
 
 This is the main content.
 
@@ -39,7 +45,7 @@ More content here.
 ### Basic Import
 
 ```markdown
-# My GEMINI.md
+# My PROMPTLY.md
 
 Welcome to my project!
 
@@ -110,13 +116,13 @@ The import processor uses the `marked` library to detect code blocks and inline 
 
 ## Import Tree Structure
 
-The processor returns an import tree that shows the hierarchy of imported files, similar to Claude's `/memory` feature. This helps users debug problems with their GEMINI.md files by showing which files were read and their import relationships.
+The processor returns an import tree that shows the hierarchy of imported files, similar to Claude's `/memory` feature. This helps users debug problems with their PROMPTLY.md files by showing which files were read and their import relationships.
 
 Example tree structure:
 
 ```
 Memory Files
- L project: GEMINI.md
+ L project: PROMPTLY.md
             L a.md
               L b.md
                 L c.md
@@ -138,7 +144,7 @@ Note: The import tree is mainly for clarity during development and has limited r
 
 ### `processImports(content, basePath, debugMode?, importState?)`
 
-Processes import statements in GEMINI.md content.
+Processes import statements in PROMPTLY.md content.
 
 **Parameters:**
 

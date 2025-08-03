@@ -62,7 +62,7 @@ import {
   AuthType,
   type IdeContext,
   ideContext,
-} from '@google/gemini-cli-core';
+} from '@lukaloehr/promptly-core';
 import { validateAuthMethod } from '../config/auth.js';
 import { useLogger } from './hooks/useLogger.js';
 import { StreamingContext } from './contexts/StreamingContext.js';
@@ -82,7 +82,7 @@ import {
   isProQuotaExceededError,
   isGenericQuotaExceededError,
   UserTierId,
-} from '@google/gemini-cli-core';
+} from '@lukaloehr/promptly-core';
 import { UpdateObject } from './utils/updateCheck.js';
 import ansiEscapes from 'ansi-escapes';
 import { OverflowProvider } from './contexts/OverflowContext.js';
@@ -546,7 +546,7 @@ const App = ({ config, settings, startupWarnings = [], version }: AppProps) => {
           clearTimeout(timerRef.current);
         }
         // Directly invoke the central command handler.
-        handleSlashCommand('/quit');
+        handleSlashCommand('/exit');
       } else {
         setPressedOnce(true);
         timerRef.current = setTimeout(() => {

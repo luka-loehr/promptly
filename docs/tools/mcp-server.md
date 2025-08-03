@@ -1,22 +1,28 @@
-# MCP servers with the Gemini CLI
+<!--
+Modified: Changed references from Gemini CLI to Promptly
+Original work Copyright Google LLC
+Licensed under Apache License 2.0
+-->
 
-This document provides a guide to configuring and using Model Context Protocol (MCP) servers with the Gemini CLI.
+# MCP servers with the Promptly
+
+This document provides a guide to configuring and using Model Context Protocol (MCP) servers with the Promptly.
 
 ## What is an MCP server?
 
-An MCP server is an application that exposes tools and resources to the Gemini CLI through the Model Context Protocol, allowing it to interact with external systems and data sources. MCP servers act as a bridge between the Gemini model and your local environment or other services like APIs.
+An MCP server is an application that exposes tools and resources to the Promptly through the Model Context Protocol, allowing it to interact with external systems and data sources. MCP servers act as a bridge between the Promptly model and your local environment or other services like APIs.
 
-An MCP server enables the Gemini CLI to:
+An MCP server enables the Promptly to:
 
 - **Discover tools:** List available tools, their descriptions, and parameters through standardized schema definitions.
 - **Execute tools:** Call specific tools with defined arguments and receive structured responses.
-- **Access resources:** Read data from specific resources (though the Gemini CLI primarily focuses on tool execution).
+- **Access resources:** Read data from specific resources (though the Promptly primarily focuses on tool execution).
 
-With an MCP server, you can extend the Gemini CLI's capabilities to perform actions beyond its built-in features, such as interacting with databases, APIs, custom scripts, or specialized workflows.
+With an MCP server, you can extend the Promptly's capabilities to perform actions beyond its built-in features, such as interacting with databases, APIs, custom scripts, or specialized workflows.
 
 ## Core Integration Architecture
 
-The Gemini CLI integrates with MCP servers through a sophisticated discovery and execution system built into the core package (`packages/core/src/tools/`):
+The Promptly integrates with MCP servers through a sophisticated discovery and execution system built into the core package (`packages/core/src/tools/`):
 
 ### Discovery Layer (`mcp-client.ts`)
 
@@ -39,7 +45,7 @@ Each discovered MCP tool is wrapped in a `DiscoveredMCPTool` instance that:
 
 ### Transport Mechanisms
 
-The Gemini CLI supports three MCP transport types:
+The Promptly supports three MCP transport types:
 
 - **Stdio Transport:** Spawns a subprocess and communicates via stdin/stdout
 - **SSE Transport:** Connects to Server-Sent Events endpoints
@@ -47,11 +53,11 @@ The Gemini CLI supports three MCP transport types:
 
 ## How to set up your MCP server
 
-The Gemini CLI uses the `mcpServers` configuration in your `settings.json` file to locate and connect to MCP servers. This configuration supports multiple servers with different transport mechanisms.
+The Promptly uses the `mcpServers` configuration in your `settings.json` file to locate and connect to MCP servers. This configuration supports multiple servers with different transport mechanisms.
 
 ### Configure the MCP server in settings.json
 
-You can configure MCP servers at the global level in the `~/.gemini/settings.json` file or in your project's root directory, create or open the `.gemini/settings.json` file. Within the file, add the `mcpServers` configuration block.
+You can configure MCP servers at the global level in the `~/.promptly/settings.json` file or in your project's root directory, create or open the `.promptly/settings.json` file. Within the file, add the `mcpServers` configuration block.
 
 ### Configuration Structure
 
@@ -97,7 +103,7 @@ Each server configuration supports the following properties:
 
 ### OAuth Support for Remote MCP Servers
 
-The Gemini CLI supports OAuth 2.0 authentication for remote MCP servers using SSE or HTTP transports. This enables secure access to MCP servers that require authentication.
+The Promptly supports OAuth 2.0 authentication for remote MCP servers using SSE or HTTP transports. This enables secure access to MCP servers that require authentication.
 
 #### Automatic OAuth Discovery
 
@@ -174,7 +180,7 @@ Use the `/mcp auth` command to manage OAuth authentication:
 
 OAuth tokens are automatically:
 
-- **Stored securely** in `~/.gemini/mcp-oauth-tokens.json`
+- **Stored securely** in `~/.promptly/mcp-oauth-tokens.json`
 - **Refreshed** when expired (if refresh tokens are available)
 - **Validated** before each connection attempt
 - **Cleaned up** when invalid or expired
@@ -311,7 +317,7 @@ You can specify the authentication provider type using the `authProviderType` pr
 
 ## Discovery Process Deep Dive
 
-When the Gemini CLI starts, it performs MCP server discovery through the following detailed process:
+When the Promptly starts, it performs MCP server discovery through the following detailed process:
 
 ### 1. Server Iteration and Connection
 
@@ -363,7 +369,7 @@ After discovery:
 
 ## Tool Execution Flow
 
-When the Gemini model decides to use an MCP tool, the following execution flow occurs:
+When the Promptly model decides to use an MCP tool, the following execution flow occurs:
 
 ### 1. Tool Invocation
 
@@ -467,7 +473,7 @@ Discovery State: COMPLETED
 
 ### Tool Usage
 
-Once discovered, MCP tools are available to the Gemini model like built-in tools. The model will automatically:
+Once discovered, MCP tools are available to the Promptly model like built-in tools. The model will automatically:
 
 1. **Select appropriate tools** based on your requests
 2. **Present confirmation dialogs** (unless the server is trusted)
@@ -569,11 +575,11 @@ The MCP integration tracks several states:
 - **Name sanitization:** Tool names are automatically sanitized to meet API requirements
 - **Conflict resolution:** Tool name conflicts between servers are resolved through automatic prefixing
 
-This comprehensive integration makes MCP servers a powerful way to extend the Gemini CLI's capabilities while maintaining security, reliability, and ease of use.
+This comprehensive integration makes MCP servers a powerful way to extend the Promptly's capabilities while maintaining security, reliability, and ease of use.
 
 ## MCP Prompts as Slash Commands
 
-In addition to tools, MCP servers can expose predefined prompts that can be executed as slash commands within the Gemini CLI. This allows you to create shortcuts for common or complex queries that can be easily invoked by name.
+In addition to tools, MCP servers can expose predefined prompts that can be executed as slash commands within the Promptly. This allows you to create shortcuts for common or complex queries that can be easily invoked by name.
 
 ### Defining Prompts on the Server
 
@@ -627,13 +633,13 @@ This can be included in `settings.json` under `mcpServers` with:
 Once a prompt is discovered, you can invoke it using its name as a slash command. The CLI will automatically handle parsing arguments.
 
 ```bash
-/poem-writer --title="Gemini CLI" --mood="reverent"
+/poem-writer --title="Promptly" --mood="reverent"
 ```
 
 or, using positional arguments:
 
 ```bash
-/poem-writer "Gemini CLI" reverent
+/poem-writer "Promptly" reverent
 ```
 
-When you run this command, the Gemini CLI executes the `prompts/get` method on the MCP server with the provided arguments. The server is responsible for substituting the arguments into the prompt template and returning the final prompt text. The CLI then sends this prompt to the model for execution. This provides a convenient way to automate and share common workflows.
+When you run this command, the Promptly executes the `prompts/get` method on the MCP server with the provided arguments. The server is responsible for substituting the arguments into the prompt template and returning the final prompt text. The CLI then sends this prompt to the model for execution. This provides a convenient way to automate and share common workflows.

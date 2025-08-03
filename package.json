@@ -1,6 +1,7 @@
 {
-  "name": "@google/gemini-cli",
-  "version": "0.1.15",
+  "name": "@lukaloehr/promptly",
+  "version": "0.0.0-beta.1",
+  "description": "Modified from @google/gemini-cli - A powerful CLI tool for interacting with AI models",
   "engines": {
     "node": ">=20.0.0"
   },
@@ -8,13 +9,14 @@
   "workspaces": [
     "packages/*"
   ],
-  "private": "true",
+  "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/google-gemini/gemini-cli.git"
+    "url": "git+https://github.com/lukaloehr/promptly.git"
   },
+  "notice": "This is a modified version of the original @google/gemini-cli package. Changes have been made to rename the project to 'promptly'. Original copyright belongs to Google LLC.",
   "config": {
-    "sandboxImageUri": "us-docker.pkg.dev/gemini-code-dev/gemini-cli/sandbox:0.1.15"
+    "sandboxImageUri": "us-docker.pkg.dev/gemini-code-dev/gemini-cli/sandbox:0.0.0-beta.1"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -34,9 +36,9 @@
     "test:scripts": "vitest run --config ./scripts/tests/vitest.config.ts",
     "test:e2e": "npm run test:integration:sandbox:none -- --verbose --keep-output",
     "test:integration:all": "npm run test:integration:sandbox:none && npm run test:integration:sandbox:docker && npm run test:integration:sandbox:podman",
-    "test:integration:sandbox:none": "GEMINI_SANDBOX=false node integration-tests/run-tests.js",
-    "test:integration:sandbox:docker": "GEMINI_SANDBOX=docker node integration-tests/run-tests.js",
-    "test:integration:sandbox:podman": "GEMINI_SANDBOX=podman node integration-tests/run-tests.js",
+    "test:integration:sandbox:none": "PROMPTLY_SANDBOX=false node integration-tests/run-tests.js",
+    "test:integration:sandbox:docker": "PROMPTLY_SANDBOX=docker node integration-tests/run-tests.js",
+    "test:integration:sandbox:podman": "PROMPTLY_SANDBOX=podman node integration-tests/run-tests.js",
     "lint": "eslint . --ext .ts,.tsx && eslint integration-tests",
     "lint:fix": "eslint . --fix && eslint integration-tests --fix",
     "lint:ci": "eslint . --ext .ts,.tsx --max-warnings 0 && eslint integration-tests --max-warnings 0",
@@ -50,7 +52,7 @@
     "clean": "node scripts/clean.js"
   },
   "bin": {
-    "gemini": "bundle/gemini.js"
+    "promptly": "bundle/promptly.js"
   },
   "files": [
     "bundle/",

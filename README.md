@@ -1,25 +1,27 @@
-# Gemini CLI
+# Promptly
 
-[![Gemini CLI CI](https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml)
+**Note: This is a modified version of the original Gemini CLI by Google LLC. The project has been renamed to "Promptly". Original copyright belongs to Google LLC under the Apache License 2.0.**
 
-![Gemini CLI Screenshot](./docs/assets/gemini-screenshot.png)
+[![Promptly CI](https://github.com/lukaloehr/promptly/actions/workflows/ci.yml/badge.svg)](https://github.com/lukaloehr/promptly/actions/workflows/ci.yml)
 
-This repository contains the Gemini CLI, a command-line AI workflow tool that connects to your
+![Promptly Screenshot](./docs/assets/promptly-screenshot.png)
+
+This repository contains Promptly (formerly Gemini CLI), a command-line AI workflow tool that connects to your
 tools, understands your code and accelerates your workflows.
 
-With the Gemini CLI you can:
+With Promptly you can:
 
-- Query and edit large codebases in and beyond Gemini's 1M token context window.
-- Generate new apps from PDFs or sketches, using Gemini's multimodal capabilities.
+- Query and edit large codebases in and beyond the AI model's 1M token context window.
+- Generate new apps from PDFs or sketches, using the AI model's multimodal capabilities.
 - Automate operational tasks, like querying pull requests or handling complex rebases.
 - Use tools and MCP servers to connect new capabilities, including [media generation with Imagen,
   Veo or Lyria](https://github.com/GoogleCloudPlatform/vertex-ai-creative-studio/tree/main/experiments/mcp-genmedia)
 - Ground your queries with the [Google Search](https://ai.google.dev/gemini-api/docs/grounding)
-  tool, built into Gemini.
+  tool, built into the AI models.
 
 ## Quickstart
 
-You have two options to install Gemini CLI.
+You have two options to install Promptly.
 
 ### With Node
 
@@ -27,19 +29,19 @@ You have two options to install Gemini CLI.
 2. **Run the CLI:** Execute the following command in your terminal:
 
    ```bash
-   npx https://github.com/google-gemini/gemini-cli
+   npx @lukaloehr/promptly
    ```
 
    Or install it with:
 
    ```bash
-   npm install -g @google/gemini-cli
+   npm install -g @lukaloehr/promptly
    ```
 
    Then, run the CLI from anywhere:
 
    ```bash
-   gemini
+   promptly
    ```
 
 ### With Homebrew
@@ -48,21 +50,21 @@ You have two options to install Gemini CLI.
 2. **Install the CLI** Execute the following command in your terminal:
 
    ```bash
-   brew install gemini-cli
+   brew install promptly
    ```
 
    Then, run the CLI from anywhere:
 
    ```bash
-   gemini
+   promptly
    ```
 
 ### Common Configuration steps
 
 3. **Pick a color theme**
-4. **Authenticate:** When prompted, sign in with your personal Google account. This will grant you up to 60 model requests per minute and 1,000 model requests per day using Gemini.
+4. **Authenticate:** When prompted, sign in with your personal Google account. This will grant you up to 60 model requests per minute and 1,000 model requests per day.
 
-You are now ready to use the Gemini CLI!
+You are now ready to use Promptly!
 
 ### Use a Gemini API key:
 
@@ -95,22 +97,22 @@ For other authentication methods, including Google Workspace accounts, see the [
 
 ## Examples
 
-Once the CLI is running, you can start interacting with Gemini from your shell.
+Once the CLI is running, you can start interacting with Promptly from your shell.
 
 You can start a project from a new directory:
 
 ```sh
 cd new-project/
-gemini
-> Write me a Gemini Discord bot that answers questions using a FAQ.md file I will provide
+promptly
+> Write me a Discord bot that answers questions using a FAQ.md file I will provide
 ```
 
 Or work with an existing project:
 
 ```sh
-git clone https://github.com/google-gemini/gemini-cli
-cd gemini-cli
-gemini
+git clone https://github.com/lukaloehr/promptly
+cd promptly
+promptly
 > Give me a summary of all of the changes that went in yesterday
 ```
 
@@ -132,7 +134,7 @@ having issues.
 
 ### Explore a new codebase
 
-Start by `cd`ing into an existing or newly-cloned repository and running `gemini`.
+Start by `cd`ing into an existing or newly-cloned repository and running `promptly`.
 
 ```text
 > Describe the main pieces of this system's architecture.
@@ -208,8 +210,8 @@ Head over to the [Uninstall](docs/Uninstall.md) guide for uninstallation instruc
 
 ## Terms of Service and Privacy Notice
 
-For details on the terms of service and privacy notice applicable to your use of Gemini CLI, see the [Terms of Service and Privacy Notice](./docs/tos-privacy.md).
+For details on the terms of service and privacy notice applicable to your use of Promptly, see the [Terms of Service and Privacy Notice](./docs/tos-privacy.md).
 
 ## Security Disclosures
 
-Please see our [security disclosure process](SECURITY.md). All [security advisories](https://github.com/google-gemini/gemini-cli/security/advisories) are managed on Github.
+Please see our [security disclosure process](SECURITY.md). All [security advisories](https://github.com/lukaloehr/promptly/security/advisories) are managed on Github.

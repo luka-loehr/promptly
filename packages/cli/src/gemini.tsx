@@ -2,6 +2,8 @@
  * @license
  * Copyright 2025 Google LLC
  * SPDX-License-Identifier: Apache-2.0
+ * 
+ * Modified: Changed import from @lukaloehr/promptly-core to @lukaloehr/promptly-core
  */
 
 import React from 'react';
@@ -38,7 +40,7 @@ import {
   logUserPrompt,
   AuthType,
   getOauthClient,
-} from '@google/gemini-cli-core';
+} from '@lukaloehr/promptly-core';
 import { validateAuthMethod } from './config/auth.js';
 import { setMaxSizedBoxDebugging } from './ui/components/shared/MaxSizedBox.js';
 import { validateNonInteractiveAuth } from './validateNonInterActiveAuth.js';

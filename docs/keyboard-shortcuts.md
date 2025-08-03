@@ -1,6 +1,12 @@
-# Gemini CLI Keyboard Shortcuts
+<!--
+Modified: Changed references from Gemini CLI to Promptly
+Original work Copyright Google LLC
+Licensed under Apache License 2.0
+-->
 
-This document lists the available keyboard shortcuts in the Gemini CLI.
+# Promptly Keyboard Shortcuts
+
+This document lists the available keyboard shortcuts in Promptly.
 
 ## General
 

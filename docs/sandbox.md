@@ -1,19 +1,25 @@
-# Sandboxing in the Gemini CLI
+<!--
+Modified: Changed references from Gemini CLI to Promptly
+Original work Copyright Google LLC
+Licensed under Apache License 2.0
+-->
 
-This document provides a guide to sandboxing in the Gemini CLI, including prerequisites, quickstart, and configuration.
+# Sandboxing in the Promptly
+
+This document provides a guide to sandboxing in the Promptly, including prerequisites, quickstart, and configuration.
 
 ## Prerequisites
 
-Before using sandboxing, you need to install and set up the Gemini CLI:
+Before using sandboxing, you need to install and set up the Promptly:
 
 ```bash
-npm install -g @google/gemini-cli
+npm install -g @google/promptly
 ```
 
 To verify the installation
 
 ```bash
-gemini --version
+promptly --version
 ```
 
 ## Overview of sandboxing
@@ -47,11 +53,11 @@ Cross-platform sandboxing with complete process isolation.
 
 ```bash
 # Enable sandboxing with command flag
-gemini -s -p "analyze the code structure"
+promptly -s -p "analyze the code structure"
 
 # Use environment variable
 export GEMINI_SANDBOX=true
-gemini -p "run the test suite"
+promptly -p "run the test suite"
 
 # Configure in settings.json
 {
@@ -126,17 +132,17 @@ export SANDBOX_SET_UID_GID=false  # Disable UID/GID mapping
 ### Debug mode
 
 ```bash
-DEBUG=1 gemini -s -p "debug command"
+DEBUG=1 promptly -s -p "debug command"
 ```
 
 ### Inspect sandbox
 
 ```bash
 # Check environment
-gemini -s -p "run shell command: env | grep SANDBOX"
+promptly -s -p "run shell command: env | grep SANDBOX"
 
 # List mounts
-gemini -s -p "run shell command: mount | grep workspace"
+promptly -s -p "run shell command: mount | grep workspace"
 ```
 
 ## Security notes

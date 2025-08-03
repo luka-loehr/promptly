@@ -25,7 +25,7 @@ import {
   Status as ToolCallStatusType,
   ApprovalMode,
   Icon,
-} from '@google/gemini-cli-core';
+} from '@lukaloehr/promptly-core';
 import {
   HistoryItemWithoutId,
   ToolCallStatus,
@@ -33,8 +33,8 @@ import {
 } from '../types.js';
 
 // Mocks
-vi.mock('@google/gemini-cli-core', async () => {
-  const actual = await vi.importActual('@google/gemini-cli-core');
+vi.mock('@lukaloehr/promptly-core', async () => {
+  const actual = await vi.importActual('@lukaloehr/promptly-core');
   return {
     ...actual,
     ToolRegistry: vi.fn(),

@@ -7,7 +7,7 @@
 import React from 'react';
 import { Text } from 'ink';
 import { Colors } from '../colors.js';
-import { type IdeContext, type MCPServerConfig } from '@google/gemini-cli-core';
+import { type IdeContext, type MCPServerConfig } from '@lukaloehr/promptly-core';
 
 interface ContextSummaryDisplayProps {
   geminiMdFileCount: number;

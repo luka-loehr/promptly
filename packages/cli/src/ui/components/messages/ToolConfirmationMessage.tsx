@@ -14,7 +14,7 @@ import {
   ToolExecuteConfirmationDetails,
   ToolMcpConfirmationDetails,
   Config,
-} from '@google/gemini-cli-core';
+} from '@lukaloehr/promptly-core';
 import {
   RadioButtonSelect,
   RadioSelectItem,

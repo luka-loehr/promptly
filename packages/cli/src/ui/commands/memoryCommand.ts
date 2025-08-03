@@ -7,7 +7,7 @@
 import {
   getErrorMessage,
   loadServerHierarchicalMemory,
-} from '@google/gemini-cli-core';
+} from '@lukaloehr/promptly-core';
 import { MessageType } from '../types.js';
 import {
   CommandKind,

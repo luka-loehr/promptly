@@ -15,12 +15,12 @@ import {
 } from 'vitest';
 import { ideCommand } from './ideCommand.js';
 import { type CommandContext } from './types.js';
-import { type Config, DetectedIde } from '@google/gemini-cli-core';
-import * as core from '@google/gemini-cli-core';
+import { type Config, DetectedIde } from '@lukaloehr/promptly-core';
+import * as core from '@lukaloehr/promptly-core';
 
 vi.mock('child_process');
 vi.mock('glob');
-vi.mock('@google/gemini-cli-core');
+vi.mock('@lukaloehr/promptly-core');
 
 describe('ideCommand', () => {
   let mockContext: CommandContext;

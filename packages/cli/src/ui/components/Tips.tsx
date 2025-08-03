@@ -2,12 +2,14 @@
  * @license
  * Copyright 2025 Google LLC
  * SPDX-License-Identifier: Apache-2.0
+ * 
+ * Modified: Changed references from GEMINI.md to PROMPTLY.md and from Gemini to Promptly
  */
 
 import React from 'react';
 import { Box, Text } from 'ink';
 import { Colors } from '../colors.js';
-import { type Config } from '@google/gemini-cli-core';
+import { type Config } from '@lukaloehr/promptly-core';
 
 interface TipsProps {
   config: Config;
@@ -28,9 +30,9 @@ export const Tips: React.FC<TipsProps> = ({ config }) => {
         <Text color={Colors.Foreground}>
           3. Create{' '}
           <Text bold color={Colors.AccentPurple}>
-            GEMINI.md
+            PROMPTLY.md
           </Text>{' '}
-          files to customize your interactions with Gemini.
+          files to customize your interactions with Promptly.
         </Text>
       )}
       <Text color={Colors.Foreground}>

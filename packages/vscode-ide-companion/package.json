@@ -1,7 +1,7 @@
 {
-  "name": "gemini-cli-vscode-ide-companion",
-  "displayName": "Gemini CLI Companion",
-  "description": "Enable Gemini CLI with direct access to your VS Code workspace.",
+  "name": "promptly-vscode-ide-companion",
+  "displayName": "Promptly Companion",
+  "description": "Enable Promptly CLI with direct access to your VS Code workspace.",
   "version": "0.0.1",
   "publisher": "google",
   "icon": "assets/icon.png",
@@ -19,10 +19,10 @@
     "AI"
   ],
   "keywords": [
-    "gemini-cli",
-    "gemini cli",
-    "gemini",
-    "gemini code",
+    "promptly-cli",
+    "promptly cli",
+    "promptly",
+    "promptly code",
     "cli",
     "ide integration",
     "ide companion"
@@ -33,8 +33,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "gemini-cli.runGeminiCLI",
-        "title": "Gemini CLI: Run"
+        "command": "promptly-cli.runPromptlyCLI",
+        "title": "Promptly CLI: Run"
       }
     ]
   },

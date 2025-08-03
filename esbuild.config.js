@@ -2,6 +2,8 @@
  * @license
  * Copyright 2025 Google LLC
  * SPDX-License-Identifier: Apache-2.0
+ * 
+ * Modified: Changed output file from gemini.js to promptly.js
  */
 
 import esbuild from 'esbuild';
@@ -18,7 +20,7 @@ esbuild
   .build({
     entryPoints: ['packages/cli/index.ts'],
     bundle: true,
-    outfile: 'bundle/gemini.js',
+    outfile: 'bundle/promptly.js',
     platform: 'node',
     format: 'esm',
     external: [],

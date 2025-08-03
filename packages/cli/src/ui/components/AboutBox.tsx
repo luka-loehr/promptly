@@ -2,6 +2,8 @@
  * @license
  * Copyright 2025 Google LLC
  * SPDX-License-Identifier: Apache-2.0
+ * 
+ * Modified: Changed "About Gemini CLI" to "About Promptly"
  */
 
 import React from 'react';
@@ -36,7 +38,7 @@ export const AboutBox: React.FC<AboutBoxProps> = ({
   >
     <Box marginBottom={1}>
       <Text bold color={Colors.AccentPurple}>
-        About Gemini CLI
+        About Promptly
       </Text>
     </Box>
     <Box flexDirection="row">
