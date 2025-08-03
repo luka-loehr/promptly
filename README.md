@@ -6,69 +6,68 @@
 
 ![Promptly Screenshot](./docs/assets/promptly-screenshot.png)
 
-This repository contains Promptly (formerly Gemini CLI), a command-line AI workflow tool that connects to your
-tools, understands your code and accelerates your workflows.
+Promptly is your intelligent command-line companion that supercharges your development workflow. Built on the foundation of Google's Gemini CLI, Promptly brings AI-powered assistance directly to your terminal, helping you navigate codebases, automate tasks, and accelerate development with unprecedented ease.
 
-With Promptly you can:
+## What makes Promptly special?
 
-- Query and edit large codebases in and beyond the AI model's 1M token context window.
-- Generate new apps from PDFs or sketches, using the AI model's multimodal capabilities.
-- Automate operational tasks, like querying pull requests or handling complex rebases.
-- Use tools and MCP servers to connect new capabilities, including [media generation with Imagen,
-  Veo or Lyria](https://github.com/GoogleCloudPlatform/vertex-ai-creative-studio/tree/main/experiments/mcp-genmedia)
-- Ground your queries with the [Google Search](https://ai.google.dev/gemini-api/docs/grounding)
-  tool, built into the AI models.
+- **Contextual Code Intelligence**: Navigate and modify massive codebases that exceed traditional AI context limits through intelligent file analysis and memory management
+- **Visual Understanding**: Transform sketches, diagrams, and PDFs into functional applications using advanced multimodal AI capabilities  
+- **Workflow Automation**: Streamline complex development tasks from PR management to automated refactoring with simple natural language commands
+- **Extensible Architecture**: Connect your favorite tools and services through MCP (Model Context Protocol) servers for unlimited possibilities
+- **Real-time Information**: Access current information through integrated Google Search, keeping your AI assistant up-to-date with the latest documentation and best practices
 
-## Quickstart
+## Getting Started
 
-You have two options to install Promptly.
+Promptly offers flexible installation options to match your workflow.
 
-### With Node
+### Node.js Installation
 
-1. **Prerequisites:** Ensure you have [Node.js version 20](https://nodejs.org/en/download) or higher installed.
-2. **Run the CLI:** Execute the following command in your terminal:
+1. **Requirements:** [Node.js v20+](https://nodejs.org/en/download) must be installed on your system
+2. **Quick Start:** Launch Promptly instantly with:
 
    ```bash
    npx @lukaloehr/promptly
    ```
 
-   Or install it with:
+   For permanent installation:
 
    ```bash
    npm install -g @lukaloehr/promptly
    ```
 
-   Then, run the CLI from anywhere:
+   Then use Promptly from any directory:
 
    ```bash
    promptly
    ```
 
-### With Homebrew
+### Homebrew Installation (Coming Soon)
 
-1. **Prerequisites:** Ensure you have [Homebrew](https://brew.sh/) installed.
-2. **Install the CLI** Execute the following command in your terminal:
+1. **Requirements:** [Homebrew](https://brew.sh/) package manager
+2. **Installation:** Run this command:
 
    ```bash
    brew install promptly
    ```
 
-   Then, run the CLI from anywhere:
+   Launch Promptly from anywhere:
 
    ```bash
    promptly
    ```
 
-### Common Configuration steps
+### Initial Setup
 
-3. **Pick a color theme**
-4. **Authenticate:** When prompted, sign in with your personal Google account. This will grant you up to 60 model requests per minute and 1,000 model requests per day.
+3. **Choose Your Theme:** Select from various color schemes to match your terminal style
+4. **Authentication:** Sign in with your Google account for generous free tier access:
+   - 60 requests per minute
+   - 1,000 requests per day
 
-You are now ready to use Promptly!
+You're all set to experience the power of Promptly!
 
-### Use a Gemini API key:
+### Using a Gemini API Key
 
-The Gemini API provides a free tier with [100 requests per day](https://ai.google.dev/gemini-api/docs/rate-limits#free-tier) using Gemini 2.5 Pro, control over which model you use, and access to higher rate limits (with a paid plan):
+For more control and higher limits, use your own Gemini API key. The free tier includes [100 daily requests](https://ai.google.dev/gemini-api/docs/rate-limits#free-tier) with Gemini 2.5 Pro:
 
 1. Generate a key from [Google AI Studio](https://aistudio.google.com/apikey).
 2. Set it as an environment variable in your terminal. Replace `YOUR_API_KEY` with your generated key.
@@ -79,9 +78,9 @@ The Gemini API provides a free tier with [100 requests per day](https://ai.googl
 
 3. (Optionally) Upgrade your Gemini API project to a paid plan on the API key page (will automatically unlock [Tier 1 rate limits](https://ai.google.dev/gemini-api/docs/rate-limits#tier-1))
 
-### Use a Vertex AI API key:
+### Enterprise Setup with Vertex AI
 
-The Vertex AI API provides a [free tier](https://cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/overview) using express mode for Gemini 2.5 Pro, control over which model you use, and access to higher rate limits with a billing account:
+For organizations and power users, Vertex AI offers enterprise-grade features with a [free tier](https://cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/overview) to get started:
 
 1. Generate a key from [Google Cloud](https://cloud.google.com/vertex-ai/generative-ai/docs/start/api-keys).
 2. Set it as an environment variable in your terminal. Replace `YOUR_API_KEY` with your generated key and set GOOGLE_GENAI_USE_VERTEXAI to true
@@ -93,13 +92,13 @@ The Vertex AI API provides a [free tier](https://cloud.google.com/vertex-ai/gene
 
 3. (Optionally) Add a billing account on your project to get access to [higher usage limits](https://cloud.google.com/vertex-ai/generative-ai/docs/quotas)
 
-For other authentication methods, including Google Workspace accounts, see the [authentication](./docs/cli/authentication.md) guide.
+Explore additional authentication options, including Google Workspace integration, in our [authentication guide](./docs/cli/authentication.md).
 
-## Examples
+## Real-World Examples
 
-Once the CLI is running, you can start interacting with Promptly from your shell.
+Promptly transforms how you interact with your development environment. Here's what you can achieve:
 
-You can start a project from a new directory:
+### Starting Fresh Projects
 
 ```sh
 cd new-project/
@@ -107,7 +106,7 @@ promptly
 > Write me a Discord bot that answers questions using a FAQ.md file I will provide
 ```
 
-Or work with an existing project:
+### Working with Existing Codebases
 
 ```sh
 git clone https://github.com/lukaloehr/promptly
@@ -116,25 +115,24 @@ promptly
 > Give me a summary of all of the changes that went in yesterday
 ```
 
-### Next steps
+### Continue Your Journey
 
-- Learn how to [contribute to or build from the source](./CONTRIBUTING.md).
-- Explore the available **[CLI Commands](./docs/cli/commands.md)**.
-- If you encounter any issues, review the **[troubleshooting guide](./docs/troubleshooting.md)**.
-- For more comprehensive documentation, see the [full documentation](./docs/index.md).
-- Take a look at some [popular tasks](#popular-tasks) for more inspiration.
-- Check out our **[Official Roadmap](./ROADMAP.md)**
+- 🛠️ [Build and Contribute](./CONTRIBUTING.md) - Join the Promptly community
+- 📚 [Command Reference](./docs/cli/commands.md) - Master all available commands
+- 🔧 [Troubleshooting](./docs/troubleshooting.md) - Quick solutions to common issues
+- 📖 [Complete Documentation](./docs/index.md) - Deep dive into all features
+- 💡 [Popular Workflows](#popular-workflows) - Get inspired by real use cases
+- 🗺️ [Development Roadmap](./ROADMAP.md) - See what's coming next
 
-### Troubleshooting
+### Need Help?
 
-Head over to the [troubleshooting guide](docs/troubleshooting.md) if you're
-having issues.
+Check our [troubleshooting guide](docs/troubleshooting.md) for quick solutions to common issues.
 
-## Popular tasks
+## Popular Workflows
 
-### Explore a new codebase
+### Codebase Exploration
 
-Start by `cd`ing into an existing or newly-cloned repository and running `promptly`.
+Navigate to any repository and launch `promptly` to unlock powerful code analysis:
 
 ```text
 > Describe the main pieces of this system's architecture.
@@ -172,7 +170,7 @@ Start by `cd`ing into an existing or newly-cloned repository and running `prompt
 > Which tools, libraries, and dependencies are used in this project?
 ```
 
-### Work with your existing code
+### Development Acceleration
 
 ```text
 > Implement a first draft for GitHub issue #123.
@@ -182,9 +180,9 @@ Start by `cd`ing into an existing or newly-cloned repository and running `prompt
 > Help me migrate this codebase to the latest version of Java. Start with a plan.
 ```
 
-### Automate your workflows
+### Workflow Automation
 
-Use MCP servers to integrate your local system tools with your enterprise collaboration suite.
+Connect Promptly to your tools through MCP servers for seamless automation:
 
 ```text
 > Make me a slide deck showing the git history from the last 7 days, grouped by feature and team member.
@@ -194,7 +192,7 @@ Use MCP servers to integrate your local system tools with your enterprise collab
 > Make a full-screen web app for a wall display to show our most interacted-with GitHub issues.
 ```
 
-### Interact with your system
+### System Utilities
 
 ```text
 > Convert all the images in this directory to png, and rename them to use dates from the exif data.
@@ -204,14 +202,14 @@ Use MCP servers to integrate your local system tools with your enterprise collab
 > Organize my PDF invoices by month of expenditure.
 ```
 
-### Uninstall
+### Uninstalling Promptly
 
-Head over to the [Uninstall](docs/Uninstall.md) guide for uninstallation instructions.
+See our [uninstall guide](docs/Uninstall.md) for clean removal instructions.
 
-## Terms of Service and Privacy Notice
+## Legal Information
 
-For details on the terms of service and privacy notice applicable to your use of Promptly, see the [Terms of Service and Privacy Notice](./docs/tos-privacy.md).
+Review our [Terms of Service and Privacy Notice](./docs/tos-privacy.md) for complete legal details.
 
-## Security Disclosures
+## Security
 
-Please see our [security disclosure process](SECURITY.md). All [security advisories](https://github.com/lukaloehr/promptly/security/advisories) are managed on Github.
+We take security seriously. Report vulnerabilities through our [security disclosure process](SECURITY.md). View all [security advisories](https://github.com/lukaloehr/promptly/security/advisories) on GitHub.
