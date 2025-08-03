@@ -2,6 +2,7 @@
   "name": "@lukaloehr/promptly-core",
   "version": "0.0.0-beta.1",
   "description": "Promptly CLI Core - Modified from @google/gemini-cli-core",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lukaloehr/promptly.git"

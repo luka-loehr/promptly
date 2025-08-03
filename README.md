@@ -2,6 +2,8 @@
 
 **Note: This is a modified version of the original Gemini CLI by Google LLC. The project has been renamed to "Promptly". Original copyright belongs to Google LLC under the Apache License 2.0.**
 
+**Installation:** `npm install -g @lukaloehr/promptly` - Everything is included in this single package.
+
 [![Promptly CI](https://github.com/lukaloehr/promptly/actions/workflows/ci.yml/badge.svg)](https://github.com/lukaloehr/promptly/actions/workflows/ci.yml)
 
 ![Promptly Screenshot](./docs/assets/promptly-screenshot.png)
@@ -34,6 +36,8 @@ Promptly offers flexible installation options to match your workflow.
    ```bash
    npm install -g @lukaloehr/promptly
    ```
+   
+   **Note:** Promptly is distributed as a single package. Everything you need is included in `@lukaloehr/promptly`.
 
    Then use Promptly from any directory:
 
